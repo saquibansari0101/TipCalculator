@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                   width: MediaQuery.of(context).size.width * 0.7,
                   height: MediaQuery.of(context).size.height * 0.35,
                   decoration: BoxDecoration(
-                    color: Color(0xffb8b5ff),
+                    color: Color(0xffffe2e2),
                     borderRadius: BorderRadius.circular(
                         MediaQuery.of(context).size.width * 0.1),
                   ),
@@ -37,14 +37,14 @@ class _HomeState extends State<Home> {
                       Text(
                         "\$ ${calculateTotalPerPerson(_billAmount, _tipPercentage, _personCounter)}",
                         style: TextStyle(
-                            color: Color(0xffedeef7),
+                            color: Color(0xff8785a2),
                             fontSize:
                                 MediaQuery.of(context).size.height * 0.075),
                       ),
                       Text(
                         "Total per person",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Color(0xff8785a2),
                             fontSize:
                                 MediaQuery.of(context).size.height * 0.025),
                       )
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
                   width: MediaQuery.of(context).size.width * 0.7,
                   height: MediaQuery.of(context).size.height * 0.35,
                   decoration: BoxDecoration(
-                    color: Color(0xffb8b5ff),
+                    color: Color(0xffffe2e2),
                     borderRadius: BorderRadius.circular(
                         MediaQuery.of(context).size.width * 0.1),
                   ),
@@ -69,20 +69,24 @@ class _HomeState extends State<Home> {
                         padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                         child: TextField(
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Color(0xff8785a2),
                               fontSize:
                                   MediaQuery.of(context).size.height * 0.029),
                           decoration: InputDecoration(
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
                               ),
-                              fillColor: Colors.white,
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Color(0xff8785a2))
+                              ),
+                              fillColor: Color(0xff8785a2),
                               prefixIcon: Icon(
                                 Icons.attach_money,
-                                color: Colors.white,
+                                color: Color(0xff8785a2),
                               ),
-                              hintText: "Bill Amount",
-                              hintStyle: TextStyle(color: Colors.white)),
+                              labelText: "Bill Amount",
+                              labelStyle: TextStyle(color: Color(0xff8785a2),
+                              fontSize: MediaQuery.of(context).size.height * 0.018)),
                           keyboardType:
                               TextInputType.numberWithOptions(decimal: true),
                           onChanged: (String value) {
@@ -102,7 +106,7 @@ class _HomeState extends State<Home> {
                             Text(
                               "Split",
                               style: TextStyle(
-                                  color: Color(0xffedeef7),
+                                  color: Color(0xff8785a2),
                                   fontSize: MediaQuery.of(context).size.height *
                                       0.025),
                             ),
@@ -122,12 +126,12 @@ class _HomeState extends State<Home> {
                                     height: 40,
                                     width: 40,
                                     decoration: BoxDecoration(
-                                        color: Colors.white,
+                                        color: Color(0xfff6f6f6),
                                         borderRadius:
                                             BorderRadius.circular(10)),
                                     child: Icon(
                                       Icons.exposure_minus_1,
-                                      color: Color(0xffb8b5ff),
+                                      color: Color(0xff8785a2),
                                     ),
                                   ),
                                 ),
@@ -137,7 +141,7 @@ class _HomeState extends State<Home> {
                                 Text(
                                   "$_personCounter",
                                   style: TextStyle(
-                                      color: Color(0xffedeef7),
+                                      color: Color(0xff8785a2),
                                       fontSize:
                                           MediaQuery.of(context).size.height *
                                               0.025),
@@ -153,12 +157,12 @@ class _HomeState extends State<Home> {
                                     height: 40,
                                     width: 40,
                                     decoration: BoxDecoration(
-                                        color: Colors.white,
+                                        color: Color(0xfff6f6f6),
                                         borderRadius:
                                             BorderRadius.circular(10)),
                                     child: Icon(
                                       Icons.exposure_plus_1,
-                                      color: Color(0xffb8b5ff),
+                                      color: Color(0xff8785a2),
                                     ),
                                   ),
                                 )
@@ -175,14 +179,14 @@ class _HomeState extends State<Home> {
                             Text(
                               "Tip",
                               style: TextStyle(
-                                  color: Color(0xffedeef7),
+                                  color: Color(0xff8785a2),
                                   fontSize: MediaQuery.of(context).size.height *
                                       0.025),
                             ),
                             Text(
                               "\$ ${(calculateTip(_billAmount, _tipPercentage)).toStringAsFixed(2)}",
                               style: TextStyle(
-                                  color: Color(0xffedeef7),
+                                  color: Color(0xff8785a2),
                                   fontSize: MediaQuery.of(context).size.height *
                                       0.025),
                             ),
@@ -192,15 +196,15 @@ class _HomeState extends State<Home> {
                       Text(
                         "$_tipPercentage%",
                         style: TextStyle(
-                            color: Color(0xffedeef7),
+                            color: Color(0xff8785a2),
                             fontSize:
                                 MediaQuery.of(context).size.height * 0.025),
                       ),
                       Slider(
                           min: 0,
                           max: 100,
-                          inactiveColor: Colors.white,
-                          activeColor: Colors.white,
+                          inactiveColor: Color(0xfff6f6f6),
+                          activeColor: Color(0xff8785a2),
                           value: _tipPercentage.toDouble(),
                           onChanged: (double value) {
                             setState(() {
